@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "lodash": "npm:/lodash@4.17.21",
+    "dayjs": "npm:/dayjs",
+    "@langchain/community/": "npm:/@langchain/community/",
+    "@langchain/ollama": "npm:/@langchain/ollama"
+
+  },
+  "deno.enable": true
+}
