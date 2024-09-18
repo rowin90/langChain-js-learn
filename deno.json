@@ -3,8 +3,14 @@
     "lodash": "npm:/lodash@4.17.21",
     "dayjs": "npm:/dayjs",
     "@langchain/community/": "npm:/@langchain/community/",
-    "@langchain/ollama": "npm:/@langchain/ollama"
-
+    "@langchain/ollama": "npm:/@langchain/ollama",
+    "dotenv": "https://deno.land/std@0.220.0/dotenv/mod.ts",
+    "langchain": "npm:/langchain@0.1.28",
+    "langchain/": "npm:/langchain@0.1.28/",
+    "@langchain/openai": "npm:/@langchain/openai@0.0.22",
+    "@langchain/openai/": "npm:/@langchain/openai@0.0.22/",
+    "@langchain/core": "npm:/@langchain/core@0.1.48",
+    "@langchain/core/": "npm:/@langchain/core@0.1.48/"
   },
   "deno.enable": true
 }
