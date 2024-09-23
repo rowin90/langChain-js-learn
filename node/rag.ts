@@ -1,25 +1,16 @@
 import { FaissStore } from '@langchain/community/vectorstores/faiss';
-import { embeddings } from './model';
+import { embeddings, model } from './model';
 import { Document } from '@langchain/core/documents';
 import { RunnableSequence } from '@langchain/core/runnables';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-// import { StringOutputParser } from "@langchain/core/output_parsers";
+import { StringOutputParser } from '@langchain/core/output_parsers';
 import 'faiss-node';
 import { HumanMessage } from '@langchain/core/messages';
+require('dotenv').config();
 
-// require('dotenv').config({})
+console.log(process.env.OPENAI_API_KEY);
 
-// const chatModel = new ChatOpenAI();
-
-// console.log(process.env.OPENAI_API_KEY);
-
-// async function run1() {
-//   await chatModel.invoke([
-//     new HumanMessage("Tell me a joke")
-//   ])
-// }
-
-// run1()
+process.env.LANGCHAIN_VERBOSE = 'true';
 
 async function run() {
   const directory = '../db/kongyiji';
@@ -37,11 +28,11 @@ async function run() {
     convertDocsToString,
   ]);
 
-  // 是可以的
-  const result = await contextRetriverChain.invoke({
-    question: '什么是基础设施',
-  });
-  console.log('result :', result);
+  //   // 是可以的
+  //   const result = await contextRetriverChain.invoke({
+  //     question: '什么是基础设施',
+  //   });
+  //   console.log('result :', result);
 
   const TEMPLATE = `
 你是一个本次事故的分析者，根据文章详细解释和回答问题，你在回答时会引用作品原文。
@@ -55,29 +46,29 @@ async function run() {
 
   const prompt = ChatPromptTemplate.fromTemplate(TEMPLATE);
 
-  // console.log('构建 ragChain',await prompt.format({
-  //   context:'1',
-  //   question:1
-  // }));
+  // console.log(
+  //   '构建 ragChain',
+  //   await prompt.format({
+  //     context: '1',
+  //     question: 1,
+  //   })
+  // );
 
+  const ragChain = RunnableSequence.from([
+    {
+      context: contextRetriverChain,
+      question: (input) => input.question,
+    },
+    prompt,
+    model,
+    new StringOutputParser(),
+  ]);
 
-  // const ragChain = RunnableSequence.from([
-  //   {
-  //     context: contextRetriverChain,
-  //     question: (input) => input.question,
-  //   },
-  //   prompt,
-  //   chatModel
-  //   // new StringOutputParser()
-  // ]);
+  const answer = await ragChain.invoke({
+    question: '什么是基础设施',
+  });
 
-  // console.log('开始调用',ragChain);
-
-  // const answer = await ragChain.invoke({
-  //   question: '今天是哪一天',
-  // });
-
-  // console.log(answer);
+  console.log('answer', answer);
 }
 
-run()
+run();
