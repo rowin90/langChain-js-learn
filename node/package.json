@@ -2,9 +2,9 @@
   "name": "test-app-node",
   "private": true,
   "version": "0.0.0",
-   "scripts": {
-    "prepare-kong-faiss": "ts-node prepare-faiss.ts",
-    "load-kong-faiss": "ts-node load-faiss.ts",
+  "scripts": {
+    "prepare-faiss": "ts-node prepare-faiss.ts",
+    "load-faiss": "ts-node load-faiss.ts",
     "multiQueryRetriever": "ts-node multiQueryRetriever.ts",
     "LLMChainExtractor": "ts-node LLMChainExtractor.ts",
     "ScoreThresholdRetriever": "ts-node ScoreThresholdRetriever.ts",
@@ -14,7 +14,10 @@
     "rag-client": "ts-node ./rag/client.ts"
   },
   "dependencies": {
-    "@langchain/community": "^0.3.1",
+    "@langchain/community": "^0.1.1",
+    "@langchain/core": "^0.1.48",
+    "@langchain/ollama": "^0.1.0",
+    "@langchain/openai": "^0.0.22",
     "dotenv": "^16.4.5",
     "faiss-node": "^0.5.1",
     "langchain": "0.1.30",

@@ -42,23 +42,7 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@langchain/community@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.npmmirror.com/@langchain/community/-/community-0.3.1.tgz#3e4dc43f1d597395562e30f2f4021f10899f958f"
-  integrity sha512-V6n4kkv3isYoiU2ciLNhcqBT96IwxpMNt5K/KxkzOfGNJIWQcsPzTccuWZXdDOQ40kelCg+S8YKGVy8X4mkgtg==
-  dependencies:
-    "@langchain/openai" ">=0.2.0 <0.4.0"
-    binary-extensions "^2.2.0"
-    expr-eval "^2.0.2"
-    flat "^5.0.2"
-    js-yaml "^4.1.0"
-    langchain ">=0.2.3 <0.4.0"
-    langsmith "~0.1.56"
-    uuid "^10.0.0"
-    zod "^3.22.3"
-    zod-to-json-schema "^3.22.5"
-
-"@langchain/community@~0.0.41":
+"@langchain/community@^0.1.1", "@langchain/community@~0.0.41":
   version "0.0.57"
   resolved "https://registry.npmmirror.com/@langchain/community/-/community-0.0.57.tgz#9d77c5acb74a4a8ec01d2cefb71dcd4088701c44"
   integrity sha512-tib4UJNkyA4TPNsTNChiBtZmThVJBr7X/iooSmKeCr+yUEha2Yxly3A4OAO95Vlpj4Q+od8HAfCbZih/1XqAMw==
@@ -89,7 +73,7 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
-"@langchain/core@~0.1.44", "@langchain/core@~0.1.60":
+"@langchain/core@^0.1.48", "@langchain/core@~0.1.44", "@langchain/core@~0.1.45", "@langchain/core@~0.1.60":
   version "0.1.63"
   resolved "https://registry.npmmirror.com/@langchain/core/-/core-0.1.63.tgz#33cc48877739e9fdb5885fbd4b16fd08d1597050"
   integrity sha512-+fjyYi8wy6x1P+Ee1RWfIIEyxd9Ee9jksEwvrggPwwI/p45kIDTdYTblXsM13y4mNWTiACyLSdbwnPaxxdoz+w==
@@ -107,13 +91,22 @@
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
-"@langchain/openai@>=0.1.0 <0.4.0", "@langchain/openai@>=0.2.0 <0.4.0":
-  version "0.3.0"
-  resolved "https://registry.npmmirror.com/@langchain/openai/-/openai-0.3.0.tgz#89329ab9350187269a471dac2c2f4fca5f1fc5a3"
-  integrity sha512-yXrz5Qn3t9nq3NQAH2l4zZOI4ev2CFdLC5kvmi5SdW4bggRuM40SXTUAY3VRld4I5eocYfk82VbrlA+6dvN5EA==
+"@langchain/ollama@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.npmmirror.com/@langchain/ollama/-/ollama-0.1.0.tgz#5600d9d47da56546f9dbef9ae7a7723d74cd8089"
+  integrity sha512-TI4DGenLf1ApoxFf4Bx/VPyO+a+poJKIul8AGm/FEyORtw3JPq1UDR6SdkGETrkDqzzdK9R0DvFRStd1MSTE/w==
   dependencies:
-    js-tiktoken "^1.0.12"
-    openai "^4.57.3"
+    ollama "^0.5.6"
+    uuid "^10.0.0"
+
+"@langchain/openai@^0.0.22":
+  version "0.0.22"
+  resolved "https://registry.npmmirror.com/@langchain/openai/-/openai-0.0.22.tgz#6763a9fb1b4800202662f031399e1bbc1bba954d"
+  integrity sha512-mkXRSeedwCzPnfvp1kvaGBXyVWTB86n77pUyw5bC9ka43/cPBHZdHlSnTZMuJi3H4RnV4CMxunaOlm+s7NWfxQ==
+  dependencies:
+    "@langchain/core" "~0.1.45"
+    js-tiktoken "^1.0.7"
+    openai "^4.26.0"
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
@@ -127,13 +120,6 @@
     openai "^4.41.1"
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
-
-"@langchain/textsplitters@>=0.0.0 <0.2.0":
-  version "0.1.0"
-  resolved "https://registry.npmmirror.com/@langchain/textsplitters/-/textsplitters-0.1.0.tgz#f37620992192df09ecda3dfbd545b36a6bcbae46"
-  integrity sha512-djI4uw9rlkAb5iMhtLED+xJebDdAG935AdP4eRTB02R7OB/act55Bj9wsskhZsvuyQRpO4O1wQOp85s6T6GWmw==
-  dependencies:
-    js-tiktoken "^1.0.12"
 
 "@tsconfig/node10@^1.0.7":
   version "1.0.11"
@@ -511,30 +497,12 @@ langchain@0.1.30:
     zod "^3.22.4"
     zod-to-json-schema "^3.22.3"
 
-"langchain@>=0.2.3 <0.4.0":
-  version "0.3.2"
-  resolved "https://registry.npmmirror.com/langchain/-/langchain-0.3.2.tgz#aec3e679d3d6c36f469448380affa475c92fbd86"
-  integrity sha512-kd2kz1cS/PIVrLEDFlrZsAasQfPLbY1UqCZbRKa3/QcpB33/n6xPDvXSMfBuKhvNj0bjW6MXDR9HZTduXjJBgg==
-  dependencies:
-    "@langchain/openai" ">=0.1.0 <0.4.0"
-    "@langchain/textsplitters" ">=0.0.0 <0.2.0"
-    js-tiktoken "^1.0.12"
-    js-yaml "^4.1.0"
-    jsonpointer "^5.0.1"
-    langsmith "^0.1.56-rc.1"
-    openapi-types "^12.1.3"
-    p-retry "4"
-    uuid "^10.0.0"
-    yaml "^2.2.1"
-    zod "^3.22.4"
-    zod-to-json-schema "^3.22.3"
-
 langchainhub@~0.0.8:
   version "0.0.11"
   resolved "https://registry.npmmirror.com/langchainhub/-/langchainhub-0.0.11.tgz#2ce22def9c84699dcbd4fd4b78270d34bd2a9ae9"
   integrity sha512-WnKI4g9kU2bHQP136orXr2bcRdgz9iiTBpTN0jWt9IlScUKnJBoD0aa2HOzHURQKeQDnt2JwqVmQ6Depf5uDLQ==
 
-langsmith@^0.1.56-rc.1, langsmith@~0.1.1, langsmith@~0.1.56, langsmith@~0.1.7:
+langsmith@^0.1.56-rc.1, langsmith@~0.1.1, langsmith@~0.1.7:
   version "0.1.59"
   resolved "https://registry.npmmirror.com/langsmith/-/langsmith-0.1.59.tgz#5fbf6a7e1adc10caf922f0cfa86aa3b5a0408ee7"
   integrity sha512-dW+z6s538zBswFFP2w/xzvVef7y2+yNt6GkmRCeLtwfpbMaM4di7JboK3vmnZ+0/LjNb2ukiMmgsTNKu/Y43cg==
@@ -667,6 +635,13 @@ num-sort@^2.0.0:
   resolved "https://registry.npmmirror.com/num-sort/-/num-sort-2.1.0.tgz#1cbb37aed071329fdf41151258bc011898577a9b"
   integrity sha512-1MQz1Ed8z2yckoBeSfkQHHO9K1yDRxxtotKSJ9yvcTUUxSvfvzEq5GwBrjjHEpMlq/k5gvXdmJ1SbYxWtpNoVg==
 
+ollama@^0.5.6:
+  version "0.5.9"
+  resolved "https://registry.npmmirror.com/ollama/-/ollama-0.5.9.tgz#d8c010fa80c8d6ece0c5cbc19b8432c780316cc0"
+  integrity sha512-F/KZuDRC+ZsVCuMvcOYuQ6zj42/idzCkkuknGyyGVmNStMZ/sU3jQpvhnl4SyC0+zBzLiKNZJnJeuPFuieWZvQ==
+  dependencies:
+    whatwg-fetch "^3.6.20"
+
 once@^1.3.1, once@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npmmirror.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
@@ -674,7 +649,7 @@ once@^1.3.1, once@^1.4.0:
   dependencies:
     wrappy "1"
 
-openai@^4.41.1, openai@^4.57.3:
+openai@^4.26.0, openai@^4.41.1:
   version "4.63.0"
   resolved "https://registry.npmmirror.com/openai/-/openai-4.63.0.tgz#cabe7223788157c96c818317cc361386807157f7"
   integrity sha512-Y9V4KODbmrOpqiOmCDVnPfMxMqKLOx8Hwcdn/r8mePq4yv7FSXGnxCs8/jZKO7zCB/IVPWihpJXwJNAIOEiZ2g==
@@ -907,6 +882,11 @@ webidl-conversions@^3.0.0:
   version "3.0.1"
   resolved "https://registry.npmmirror.com/webidl-conversions/-/webidl-conversions-3.0.1.tgz#24534275e2a7bc6be7bc86611cc16ae0a5654871"
   integrity sha512-2JAn3z8AR6rjK8Sm8orRC0h/bcl/DqL7tRPdGZ4I1CjdF+EaMLmYxBHyXuKL849eucPFhvBoxMsflfOb8kxaeQ==
+
+whatwg-fetch@^3.6.20:
+  version "3.6.20"
+  resolved "https://registry.npmmirror.com/whatwg-fetch/-/whatwg-fetch-3.6.20.tgz#580ce6d791facec91d37c72890995a0b48d31c70"
+  integrity sha512-EqhiFU6daOA8kpjOWTL0olhVOF3i7OrFzSYiGsEMB8GcXS+RrzauAERX65xMeNWVqxA6HXH2m69Z9LaKKdisfg==
 
 whatwg-url@^5.0.0:
   version "5.0.0"
