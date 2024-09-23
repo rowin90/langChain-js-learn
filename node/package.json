@@ -9,6 +9,7 @@
     "LLMChainExtractor": "ts-node LLMChainExtractor.ts",
     "ScoreThresholdRetriever": "ts-node ScoreThresholdRetriever.ts",
     "prepare-qiu": "ts-node ./rag/prepare-qiu.ts",
+    "rag": "ts-node ./rag.ts",
     "rag-2": "ts-node ./rag/index.ts",
     "rag-server": "ts-node ./rag/server.ts",
     "rag-client": "ts-node ./rag/client.ts"

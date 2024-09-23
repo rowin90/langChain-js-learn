@@ -6,7 +6,7 @@ import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { StringOutputParser } from '@langchain/core/output_parsers';
 import 'faiss-node';
 import { HumanMessage } from '@langchain/core/messages';
-require('dotenv').config();
+import 'dotenv/config'
 
 console.log(process.env.OPENAI_API_KEY);
 
@@ -71,4 +71,4 @@ async function run() {
   console.log('answer', answer);
 }
 
-run();
+// run();
