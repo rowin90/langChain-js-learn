@@ -16,4 +16,5 @@ export const model = new ChatOpenAI({
   configuration: {
     baseURL: 'https://api.shellgpt.top/v1',
   },
+  temperature: 0.2,
 });

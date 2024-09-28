@@ -10,7 +10,7 @@ import 'dotenv/config'
 
 console.log(process.env.OPENAI_API_KEY);
 
-process.env.LANGCHAIN_VERBOSE = 'true';
+// process.env.LANGCHAIN_VERBOSE = 'true';
 
 async function run() {
   const directory = '../db/kongyiji';
@@ -22,14 +22,14 @@ async function run() {
     return documents.map((document) => document.pageContent).join('\n');
   };
 
-  const contextRetriverChain = RunnableSequence.from([
+  const contextRetrieverChain = RunnableSequence.from([
     (input) => input.question,
     retriever,
     convertDocsToString,
   ]);
 
   //   // 是可以的
-  //   const result = await contextRetriverChain.invoke({
+  //   const result = await contextRetrieverChain.invoke({
   //     question: '什么是基础设施',
   //   });
   //   console.log('result :', result);
@@ -56,7 +56,7 @@ async function run() {
 
   const ragChain = RunnableSequence.from([
     {
-      context: contextRetriverChain,
+      context: contextRetrieverChain,
       question: (input) => input.question,
     },
     prompt,
