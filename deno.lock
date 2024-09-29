@@ -962,6 +962,7 @@
       "npm:dayjs",
       "npm:langchain@0.1.28",
       "npm:lodash@4.17.21",
+      "npm:openai",
       "npm:pdf-parse"
     ]
   }
