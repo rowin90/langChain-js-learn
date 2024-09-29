@@ -13,7 +13,9 @@
     "@langchain/core/": "npm:/@langchain/core@0.1.48/",
     "pdf-parse": "npm:/pdf-parse/lib/pdf-parse.js",
     "cheerio": "npm:/cheerio",
-    "openai": "npm:/openai"
+    "openai": "npm:/openai",
+    "zod": "npm:/zod",
+    "zod-to-json-schema": "npm:/zod-to-json-schema"
   },
   "deno.enable": true
 }
